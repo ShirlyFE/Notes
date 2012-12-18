@@ -7,6 +7,6 @@ ie6 最小高度
         min-height:100px; 
         height:auto !important; 
         height:100px; 
-        overflow:visible;
+        overflow:visible; /* 必须要加上！ */
     }
 ```    
