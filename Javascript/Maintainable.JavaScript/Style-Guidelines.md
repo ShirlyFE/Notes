@@ -1,7 +1,7 @@
 **Style Guidelines**
 ====================
 
-###1.Basic Formatting
+##1.Basic Formatting
 
 ####1.Indentation Levels
 
@@ -49,3 +49,25 @@ For function and method names, the first word should always be a verb, and there
 * get: Function returns a nonboolean 
 * set: Function is used to save a value
 
+####8.Constants
+
+The convention comes from C and uses all uppercase letters with underscores sepa- rating words.
+
+Consider the following example:
+	if (count < MAX_COUNT) { 		doSomething();	}
+	In this code, it’s easy to tell that count is a variable that may change and MAX_COUNT is a variable that is intended to never change. 
+####9.Constructors
+Constructors are formatted using Pascal case.
+Pascal case is the same as camel case except that the initial letter is uppercase. 
+>JSLint will warn if a constructor is found without an initial uppercase letter or if a constructor function is used without the new operator. JSHint will warn if a constructor is found without an initial uppercase letter only if you add the special newcap option.##2.Literal Values
+>JavaScript has several types of primitive literal values: strings, numbers, booleans, null, and undefined. There are also object literals and array literals.
+
+####1.Strings
+
+>in the string using double quotes, we had to escape the double quote characters, and in the string using single quotes, we did not. What matters is that you pick a single style and stick with it throughout the code base.
+>I prefer using double quotes, because I tend to switch back and forth between writing Java and JavaScript frequently. Because Java uses only dou- ble quotes for strings, I find it easier to switch between contexts by maintaining that convention in JavaScript. 
+
+multiline strings, split the string into multiple strings and concatenate them together:
+	// Good	var longString = "Here's the story, of a man " +					  "named Brady.";
+####2.Numbers
+					  
