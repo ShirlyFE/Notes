@@ -33,7 +33,7 @@ _Use spaces for indentation_
 
 ####5.Blank Lines
 
->* Between methods * Between the local variables in a method and its first statement * Before a multiline or single-line comment * Between logical sections inside a method to improve readability
+>1. Between methods 2. Between the local variables in a method and its first statement 3. Before a multiline or single-line comment 4. Between logical sections inside a method to improve readability
 
 ####6.Naming
 
@@ -44,8 +44,8 @@ _Use spaces for indentation_
 >Variable names are always camel case and should begin with a noun. Beginning with a noun helps to differentiate variables from functions, which should begin with a verb.
 
 For function and method names, the first word should always be a verb, and there are some common conventions used for that verb:
->* can: Function returns a boolean 
- * has: Function returns a boolean * is: Function returns a boolean
- * get: Function returns a nonboolean 
- * set: Function is used to save a value
+>1. can: Function returns a boolean 
+ 2. has: Function returns a boolean 3. is: Function returns a boolean
+ 4. get: Function returns a nonboolean 
+ 5. set: Function is used to save a value
 
