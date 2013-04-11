@@ -39,7 +39,7 @@ _Use spaces for indentation_
 
 >JavaScript’s core, ECMAScript, is written using a conven- tion called camel case. Camel-case names begin with a lowercase letter and each sub- sequent word begins with an uppercase letter.
 
-####7.Variables and Functions
+#####6.1 Variables and Functions
 
 >Variable names are always camel case and should begin with a noun. Beginning with a noun helps to differentiate variables from functions, which should begin with a verb.
 
@@ -49,25 +49,36 @@ For function and method names, the first word should always be a verb, and there
 * get: Function returns a nonboolean 
 * set: Function is used to save a value
 
-####8.Constants
+#####6.2 Constants
 
 The convention comes from C and uses all uppercase letters with underscores sepa- rating words.
 
 Consider the following example:
 	if (count < MAX_COUNT) { 		doSomething();	}
 	In this code, it’s easy to tell that count is a variable that may change and MAX_COUNT is a variable that is intended to never change. 
-####9.Constructors
+#####6.3 Constructors
 Constructors are formatted using Pascal case.
 Pascal case is the same as camel case except that the initial letter is uppercase. 
->JSLint will warn if a constructor is found without an initial uppercase letter or if a constructor function is used without the new operator. JSHint will warn if a constructor is found without an initial uppercase letter only if you add the special newcap option.##2.Literal Values
+>JSLint will warn if a constructor is found without an initial uppercase letter or if a constructor function is used without the new operator. JSHint will warn if a constructor is found without an initial uppercase letter only if you add the special newcap option.####7.Literal Values
 >JavaScript has several types of primitive literal values: strings, numbers, booleans, null, and undefined. There are also object literals and array literals.
 
-####1.Strings
+#####7.1 Strings
 
 >in the string using double quotes, we had to escape the double quote characters, and in the string using single quotes, we did not. What matters is that you pick a single style and stick with it throughout the code base.
 >I prefer using double quotes, because I tend to switch back and forth between writing Java and JavaScript frequently. Because Java uses only dou- ble quotes for strings, I find it easier to switch between contexts by maintaining that convention in JavaScript. 
 
 multiline strings, split the string into multiple strings and concatenate them together:
 	// Good	var longString = "Here's the story, of a man " +					  "named Brady.";
-####2.Numbers
-					  
+#####7.2 Numbers
+>1. It’s a good idea to always include digits before and after the decimal point to avoid any confusion.
+>2. the best approach is to disallow octal literals in code. Although not called out in any of the popular style guides, both JSLint and JSHint will warn when they come across an octal literal. 
+#####7.3 Null
+The special value null is often misunderstood and confused with undefined. This value should be used in just a few cases:>* To initialize a variable that may later be assigned an object value* To compare against an initialized variable that may or may not have an object value* To pass into a function where an object is expected* To return from a function where an object is expected
+There are also some cases in which null should not be used:>* Do not use null to test whether an argument was supplied.* Do not test an uninitialized variable for the value null.
+#####7.4 Undefined
+>By avoiding the use of the special value undefined, you effectively keep the meaning of typeof returning “ __undefined__ ” to a single case: when a variable hasn’t been declared. If you’re using a variable that may or may not be assigned an object value later on, initialize it to __null__.
+>__The typeof operator returns “object” for a null value, so it can be differentiated from undefined.__
+#####7.5 Object Literals
+	// Good	var book = {		title: "Maintainable JavaScript",		author: "Nicholas C. Zakas" 
+	};#####7.6 Array Literals
+	// Good	var colors = [ "red", "green", "blue" ]; 	var numbers = [ 1, 2, 3, 4 ];					  
