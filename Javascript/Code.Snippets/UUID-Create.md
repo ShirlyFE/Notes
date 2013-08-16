@@ -8,32 +8,32 @@ GUID是一种由算法生成的二进制长度为128位的数字标识符。GUID
 GUID 的总数达到了2^128（3.4×10^38）个，所以随机生成两个相同GUID的可能性非常小，但并不为0。GUID一词有时也专指微软对UUID标准的实现。
 
 ###1.
-        ```javascript
-        function uuid() {
-            var s = [],
-                hexDigits = "0123456789abcdef",
-                uuid = s.join("");
-            for (var i = 0; i < 36; i++) {
-                s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
-            }
-            s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
-            s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
-            s[8] = s[13] = s[18] = s[23] = "-";
-
-            return uuid;
+    ```javascript
+    function uuid() {
+        var s = [],
+            hexDigits = "0123456789abcdef",
+            uuid = s.join("");
+        for (var i = 0; i < 36; i++) {
+            s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
         }
+        s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+        s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+        s[8] = s[13] = s[18] = s[23] = "-";
+
+        return uuid;
+    }
         ```
  
 
 ###2.
-        ```javascript
-        function guid() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-                return v.toString(16);
-            });
-        }
-        ```
+    ```javascript
+    function guid() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+    }
+    ```
 
 ###3.
 
