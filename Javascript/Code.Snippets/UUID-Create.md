@@ -75,12 +75,12 @@ function uuid(len, radix) {
 }
 ```
 
-    这个可以指定长度和基数。比如
+这个可以指定长度和基数。比如
 
-        // 8 character ID (base=2)
-        uuid(8, 2) // "01001010"
-        // 8 character ID (base=10)
-        uuid(8, 10) // "47473046"
-        // 8 character ID (base=16)
-        uuid(8, 16) // "098F4D35"
+    // 8 character ID (base=2)
+    uuid(8, 2) // "01001010"
+    // 8 character ID (base=10)
+    uuid(8, 10) // "47473046"
+    // 8 character ID (base=16)
+    uuid(8, 16) // "098F4D35"
 
