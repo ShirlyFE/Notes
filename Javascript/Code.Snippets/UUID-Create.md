@@ -26,14 +26,14 @@ GUID 的总数达到了2^128（3.4×10^38）个，所以随机生成两个相同
  
 
 ###2.
-    ```javascript
+```javascript
     function guid() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
             var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
             return v.toString(16);
         });
     }
-    ```
+```
 
 ###3.
 
