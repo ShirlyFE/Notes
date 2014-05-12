@@ -27,3 +27,9 @@
    * js 模板渲染
 - user_security_info_update.html
    * js 表单验证
+
+
+##page
+- detail
+- user_earn
+- user_charge
